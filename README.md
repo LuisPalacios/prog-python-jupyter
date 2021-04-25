@@ -14,7 +14,6 @@ You will need Python installed in your local machine, - Mac OS comes with old ve
 6) Never delete the original Python that OSX comes with.
 7) From now on use the following PATH for the new python: `/usr/local/bin/python3`
 
-[Miniforge](https://github.com/conda-forge/miniforge)
 
 ## Install PIP
 
@@ -34,17 +33,18 @@ Python 3.9.2
 pip 21.0.1 from /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pip (python 3.9)
 ```
 
-
 ## Isolated Python Environments
 
 Python has three popular ways of creating virtual environment at the moment
 
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/): Virtualenv was the default way of creating virtual environment for many years. It is still used by many although people are moving to improved pipenv or conda (explained below).
-- [PipEnv](https://pipenv.pypa.io/en/latest/): Pipenv was created due to many shortcomings of virtualenv.
 - [Conda](https://docs.conda.io/projects/conda/en/latest/index.html): If you are an engineer, or a scientist or use Numpy/Scipy package in windows environment, you have probably experienced the frustration of having to do a lot of work to install numpy/scipy packages. Anaconda is a distribution of python that makes it super simple to install those packages. Anaconda also has their own virtual environment system called conda. Make sure to have Anaconda installed.- 
+- [PipEnv](https://pipenv.pypa.io/en/latest/): Pipenv was created due to many shortcomings of virtualenv and is my preferred method
 
 
-### My recommendation: PipEnv
+### PipEnv
+
+My personal preference is PipEnv. Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world. Windows is a first-class citizen, in our world.
 
 To install pipenv, you need to install pip first. Then do
 
@@ -52,20 +52,17 @@ To install pipenv, you need to install pip first. Then do
 pip install pipenv
 ```
 
+### Prepare Jupyter lab environment
 
+```
+pipenv jupyterlab
+pipenv run jupyter lab
+```
 
-
-
-
+### Prepare Pandas environment
 
 ```
 pipenv install pandas tabulate openpyxl lxml html5lib beautifulsoup4 sqlalchemy feather-format matplotlib xlrd scipy ipykernel jupyterlab pexpect ipython-sql Faker
-```
-
-### Jupyter lab
-```
-
-pipenv run jupyter lab
 ```
 
 ### Remove PipEnv Enrironment
@@ -74,26 +71,3 @@ pipenv run jupyter lab
 pipenv --rm
 ```
 
-## Conda
-
-```
-conda create -n environment-pandas
-conda activate environment-pandas
-
-conda install pandas tabulate openpyxl lxml html5lib beautifulsoup4 sqlalchemy feather-format matplotlib xlrd scipy ipykernel jupyterlab pexpect Faker
-
-pip install ipython-sql
-```
-
-### Jupyter Lab
-```
-conda activate environment-pandas
-jupyter lab
-```
-
-
-### Remove Conda Environment
-
-````
-conda env remove -n environment-pandas
-````
