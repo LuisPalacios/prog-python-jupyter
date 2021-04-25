@@ -44,7 +44,7 @@ Python has three popular ways of creating virtual environment at the moment
 
 ### PipEnv
 
-My personal preference is PipEnv. Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world. Windows is a first-class citizen, in our world.
+My personal preference is **PipEnv**, a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world. Windows is a first-class citizen, in our world.
 
 To install pipenv, you need to install pip first. Then do
 
