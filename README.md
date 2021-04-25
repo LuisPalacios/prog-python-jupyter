@@ -109,16 +109,27 @@ Your IP is 83.34.4.11
 
 ```
 
-
-
 ### Prepare Jupyter lab environment
 
+In this example I'm going to create a Jupyter Lab environment. First of all create the project (in the example python-regex`), then cd into it, install jupyterlab and run the lab. From your browser you can play in your new jupyterlab environment.
+
 ```
-pipenv jupyterlab
-pipenv run jupyter lab
+~ > mkdir python-regex
+➜  ~ > cd python-regex
+➜  python-regex >
+➜  python-regex > pipenv install jupyterlab
+➜  python-regex > pipenv run jupyter lab
 ```
 
-### Prepare Pandas environment
+Connect to my localhost at [http://localhost:8888/lab](http://localhost:8888/lab)
+Create a new notebook
+
+You can work from the browser or even from Visual Studio Code. 
+
+
+### Other examples (Pandas environment)
+
+For example, to create a Pandas environment run:
 
 ```
 pipenv install pandas tabulate openpyxl lxml html5lib beautifulsoup4 sqlalchemy feather-format matplotlib xlrd scipy ipykernel jupyterlab pexpect ipython-sql Faker
