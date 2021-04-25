@@ -52,6 +52,65 @@ To install pipenv, you need to install pip first. Then do
 pip install pipenv
 ```
 
+### PipEnv handson with a project
+
+Let's create a simple proyect in python with just `main.py` under a virtual environment with pipenv
+
+
+```
+➜  ~ > mkdir myproject
+➜  ~ > cd myproject
+➜  myproject > pipenv install requests
+Creating a virtualenv for this project...
+Pipfile: /Users/luis/myproject/Pipfile
+:
+Pipfile.lock not found, creating...
+Updated Pipfile.lock (fe5a22)!
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+
+➜  myproject > cat Pipfile
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+➜  myproject > pipenv lock
+➜  myproject > pipenv lock -r
+➜  myproject > pipenv shell
+Launching subshell in virtual environment...
+ . /Users/luis/.local/share/virtualenvs/myproject-8mgVbunj/bin/activate
+➜  myproject >  . /Users/luis/.local/share/virtualenvs/myproject-8mgVbunj/bin/activate
+(myproject) ➜  myproject > pip freeze
+certifi==2020.12.5
+chardet==4.0.0
+idna==2.10
+requests==2.25.1
+urllib3==1.26.4
+(myproject) ➜  myproject > cat > main.py
+import requests
+response = requests.get('https://httpbin.org/ip')
+print('Your IP is {0}'.format(response.json()['origin']))
+
+(myproject) ➜  myproject > python main.py
+Your IP is 83.34.4.11
+(myproject) ➜  myproject > exit
+
+➜  myproject > pipenv run python main.py
+Your IP is 83.34.4.11
+
+```
+
+
+
 ### Prepare Jupyter lab environment
 
 ```
