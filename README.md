@@ -2,42 +2,38 @@
 
 This repository documents how to create a development environment in my Mac OS with Python & JupyterLab. 
 
-## Install Python 3
+## Install Python 3 in Mac OS
 
 You will need Python installed in your local machine, - Mac OS comes with old versions of Python `/usr/bin/python Python 2.7.16`and `/usr/bin/python3 Python 3.8.2`
 
 1) [Download the latest version for Mac OS X](https://www.python.org/downloads/mac-osx/)
 2) Run "Install Certificates.command" from /Applications/Python 3.9 (From FINDER)
-3) Open a SHELL (Terminal.app or iTerm) and run: `/Applications/Python 3.9/Update/Shell Profile.command
-3) Open a SHELL (Terminal.app or iTerm) and run`
-
-4) Modify your SHELL to anticipate the new PYTHON in $PATH
-
-```
-# If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-launchctl setenv PATH "/usr/local/bin:/usr/local/sbin:$PATH"
-```
-
-5) A trick to avoid running "python" with the old version
-    - echo "alias python=/usr/local/bin/python3" >> ~/.bashrc
-    - echo "alias python=/usr/local/bin/python3" >> ~/.bash_profile
-    - echo "alias python=/usr/local/bin/python3" >> ~/.zshrc (If you have OH-MY-ZSH)
-
+3) Open a SHELL (Terminal.app or iTerm) and run: `/Applications/Python 3.9/Update/Shell Profile.command`
+4) Modify your SHELL to anticipate the new PYTHON in $PATH: `export PATH=/usr/local/bin:/usr/local/sbin:$PATH`
+5) TIP: To avoid running "python" with the old version, in your .zshrc: `alias python=/usr/local/bin/python3" >> ~/.zshrc`
 6) Never delete the original Python that OSX comes with.
-
-7) From now on use the following PATH for the new python: 
-```
-    - /usr/local/bin/python3
-```
+7) From now on use the following PATH for the new python: `/usr/local/bin/python3`
 
 [Miniforge](https://github.com/conda-forge/miniforge)
 
+## Install PIP
+
+Open your terminal or iTerm2 and install pip with: 
 
 ```
-python --version
-pip --version
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
 ```
+
+When I installed Pythong and Pip I had this versions:
+
+```
+➜  ~ > python --version
+Python 3.9.2
+➜  ~ > pip --version
+pip 21.0.1 from /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pip (python 3.9)
+```
+
 
 ## Isolated Python Environments
 
