@@ -71,3 +71,16 @@ pipenv install pandas tabulate openpyxl lxml html5lib beautifulsoup4 sqlalchemy 
 pipenv --rm
 ```
 
+## Updates and Upgrades
+
+Periodically run updates/upgrades of your installation: 
+
+```
+➜  ~ > pip install --upgrade pip
+```
+
+To update all installed packages with PIP there isn't a built-in flag yet, but you can use
+
+```
+➜  ~ > pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+```
